@@ -8,6 +8,11 @@ route.get('/users', (req, res) => {
     res.send(users)
 })
 
+route.get('/login', (req, res) => {
+    console.log(logged.name)
+    res.json(logged.name)
+})
+
 route.post('/login', (req, res) => {
     const user = req.body
     const found = users.find(el => el.name === user.name)
@@ -18,13 +23,9 @@ route.post('/login', (req, res) => {
             logged = {name:user.name,password:user.password};
             return res.redirect('http://localhost:3000/home')
         }
+        return res.json({msg: 'invalid-password'})
     }
-    res.send('User not found')
-})
-
-route.get('/login', (req, res) => {
-    console.log(logged.name)
-    res.json(logged.name)
+    res.json({msg: 'invalid-user'})
 })
 
 route.post('/register', (req, res) => {
