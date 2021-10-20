@@ -9,7 +9,6 @@ route.get('/users', (req, res) => {
 })
 
 route.get('/login', (req, res) => {
-    console.log(logged.name)
     res.json(logged.name)
 })
 
@@ -21,22 +20,23 @@ route.post('/login', (req, res) => {
         const auth = users[index].password === user.password ? true : false
         if (auth) {
             logged = {name:user.name,password:user.password};
-            return res.redirect('http://localhost:3000/home')
+            return res.json({msg:'success'})
         }
         return res.json({msg: 'invalid-password'})
     }
-    res.json({msg: 'invalid-user'})
+    return res.json({msg: 'invalid-user'})
 })
 
 route.post('/register', (req, res) => {
     const user = req.body
-    if(!user.name || !user.password) {
-        const found = users.some(el => el.name === user.name)
-        if (found) return res.send('Username already registered')
-        return res.send('Failed to register')
+    if(user.email && user.name && user.password) {
+        const user_found = users.find(el => el.name === user.name)
+        const email_found = users.find(el => el.email === user.email)
+        if (user_found || email_found) return res.json({msg: 'already-registered'})
+        users.push(user)
+        return res.json({msg: 'success'})
     }
-    users.push(user)
-    res.redirect('http://localhost:3000/')
+    return res.json({msg: 'registration-failed'})
 })
 
 module.exports = route

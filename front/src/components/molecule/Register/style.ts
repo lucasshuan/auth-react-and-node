@@ -1,4 +1,4 @@
-import styled from 'styled-components'  
+import styled from "styled-components"
 
 export const Container = styled.div`
 
@@ -12,17 +12,12 @@ export const Container = styled.div`
         color:white;
         margin-top: 6px;
     }
-
-    .LowAlpha{
-        margin: 25px;
-        color: #95eaff95;
-    }
-
+    
     .End{
         animation: FadeOut 0.6s;
         @keyframes FadeOut{
             from{
-                top: 0  ;
+                top: 0;
                 opacity: 1;
             }
             to{
@@ -53,7 +48,7 @@ export const LoginForm = styled.div`
     }
 `
 
-export const Signup = styled.button`
+export const Signin = styled.button`
     color:cyan;
     text-decoration: none;
     background: none;
@@ -68,49 +63,4 @@ export const Signup = styled.button`
     :hover{
         color:white;
     }
-`
-
-export const Options = styled.div`
-    button{
-        outline: none;
-        border: none;
-        background: none;
-        font-size: 22px;
-        margin: 0px 3px 0 3px;
-        transition: 0.25s;
-        padding-top: 6px;
-        border: 0px solid white;
-        border-radius: 4px;
-        cursor: pointer;
-        :hover{
-            background:white;
-        }
-    }
-    
-    .Facebook{
-        color: white;
-        background: #3b5998;
-        :hover{
-            color: #3b5998;
-        }
-    }
-    .Google{
-        svg{
-            filter: brightness(0) invert(1)
-        }
-        background: #DB4437;
-        :hover{
-            svg{
-                filter: invert(0);
-            }
-        }
-    }
-    .Linkedin{
-        color: white;
-        background: #0e76a8;
-        :hover{
-            color: #0e76a8;
-        }
-    }
-
 `

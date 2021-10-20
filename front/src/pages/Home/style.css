@@ -1,0 +1,10 @@
+.Home{
+    background: url(https://i.imgur.com/1wSoYXK.png);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    background-position: center 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
