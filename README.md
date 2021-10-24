@@ -9,6 +9,7 @@ Authoritative login system using <b>ReactJS</b> and <b>NodeJS</b>
 * Login username and password authentication
 * New user registration if user and e-mail are available and not used
 * Visual user feedback through the application
+* Smoothy transition between pages (page name is rewritten everytime it is changed)
 
 # Issues
 
