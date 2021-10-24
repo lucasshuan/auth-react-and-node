@@ -7,6 +7,22 @@ export const Container = styled.div`
     text-align: center;
     margin-top: 5.5px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    .FadeIn{
+        animation: FadeIn 0.6s;
+        @keyframes FadeIn{
+            from{
+                top: -30px;
+                -moz-transform: translateY(-30px);
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to{
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
 `
 
 export const Welcome = styled.p`
